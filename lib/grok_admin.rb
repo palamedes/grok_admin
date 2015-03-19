@@ -4,17 +4,23 @@ module GrokAdmin
 
   class << self
 
-    attr_accessor :application
+    attr_accessor :core
 
-    def application
-      @application ||= ::GrokAdmin::Application.new
+    def initialize
+      @core ||= ::GrokAdmin::Core.new
     end
-
-    def test
-      "Success!"
-    end
-
 
   end
+
+
+  # Core to the application
+  class Core
+
+    def test
+      "Core Success"
+    end
+
+  end
+
 
 end
