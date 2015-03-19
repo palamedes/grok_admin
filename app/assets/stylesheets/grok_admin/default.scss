@@ -39,25 +39,15 @@ body:before {
 body {
   background: url(/assets/bgtile.png) repeat;
 
-  div.content {
+  section {
     width: $contentWidth;
     margin: auto;
-  }
-
-  section {
-    margin-top: 20px;
-    border-radius: 10px;
-    background-color: rgba(248,248,248,1);
-    box-shadow: 0 0 3px 1px rgba(39,41,43,.3),0 1px 2px 0 rgba(0,0,0,.05);
-    &>h1, &>h2, &>h3, &>h4, &>h5 {
-      margin-top: 0;
-      padding-top: 0;
-    }
   }
 
   table.ui.table {
     background: inherit;
     td, th {
+      word-break: break-word;
       &.actions {
         width: 200px;
         text-align:center;
@@ -91,9 +81,6 @@ body {
     }
   }
 
-  .ui.top.attached.segment {
-    padding-top: 50px;
-  }
 
 }
 
