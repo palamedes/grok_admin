@@ -14,6 +14,10 @@ $(document).on('ready page:load', function () {
   $('.datepicker').datepicker({"dateFormat": "DD, d MM, yy"});
 
 
+  // Set the initial state of the undo and save buttons (hide them)
+  $('i.save.icon').hide();
+  $('i.undo.icon').hide();
+
   // When the user clicks the edit icon for a row do things!
   $(document).on('click', 'i.edit.icon', function(e) {
     // Get the columns for this edit icon based on its siblings (so we dont get it)
@@ -38,7 +42,7 @@ $(document).on('ready page:load', function () {
       }
       // Build our input
       // todo build it based on the type of input in data-type
-      var html = "<input class='editor' type='" + type + "' value='" + value + "' />"
+      var html = "<input class='editor' type='" + type + "' value='" + value + "' />";
       // Inject the input and focus it.
       $(td).html(html);
       $(td).find('input').css('width', colSize - 20);
@@ -47,6 +51,10 @@ $(document).on('ready page:load', function () {
     // Hide the edit and delete button.
     $(this).hide();
     $(this).siblings().hide();
+    // Show the save and undu icons
+    $(this).siblings('i.save.icon').show();
+    $(this).siblings('i.undo.icon').show();
+
   });
 
 });
