@@ -33,9 +33,8 @@
                   <i class="red delete icon"></i>
                 </td>
                 <% model.column_names.each do |column| %>
-                <td class="<%= column %> editable" data-type="<%= model.columns_hash[column].type.to_s %>">
-                  <%= obj[column] %>
-                </td>
+                <%# NO SPACES between the td and the column data or it causes issues %>
+                <td class="<%= column %> editable" data-type="<%= model.columns_hash[column].type.to_s %>"><%= obj[column] %></td>
                 <% end %>
               </tr>
               <% end %>
