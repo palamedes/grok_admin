@@ -1,27 +1,25 @@
 <div class="content">
   <div class="ui top attached segment">
-    <div class="ui segment">
-      <table class="ui celled stripped table">
-        <thead>
+    <table class="ui celled stripped table">
+      <thead>
+      <tr>
+        <th>Model</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @models.each do |model| %>
         <tr>
-          <th>Model</th>
-          <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <% @models.each do |model| %>
-          <tr>
-            <td>
-              <%= model.name %>
-            </td>
-            <td>
+          <td>
+            <%= model.name %>
+          </td>
+          <td>
 
-            </td>
-          </tr>
-        <% end %>
-        </tbody>
-      </table>
-    </div>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
 
     <div class="ui top attached label">System Models</div>
   </div>
