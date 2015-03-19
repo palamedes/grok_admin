@@ -33,6 +33,9 @@ $(document).on('ready page:load', function () {
         case 'date':
           var type = 'date';
           break;
+        case 'datetime':
+          var type = 'datetime';
+          break;
         default :
           var type = 'text';
       }
