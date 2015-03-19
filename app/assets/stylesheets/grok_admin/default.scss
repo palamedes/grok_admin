@@ -48,10 +48,17 @@ body {
     background: inherit;
     td, th {
       word-break: break-word;
+      &.id {
+        min-width: 40px;
+      }
       &.actions {
         width: 200px;
         text-align:center;
       }
+    }
+
+    .ui.definition.table tr td:first-child {
+      text-align: center;
     }
   }
 
