@@ -58,6 +58,7 @@ body {
     }
 
     &.definition tr td:first-child {
+      min-width: 100px;
       text-align: center;
     }
   }
