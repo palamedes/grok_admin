@@ -25,9 +25,20 @@ $(document).on('ready page:load', function () {
       var value = $(td).text();
       // Store the original data just incase
       $(td).data('original-value', value);
+      // Lets figure out the input type
+      switch($(td).data('type')) {
+        case 'integer':
+          var type = 'number';
+          break;
+        case 'date':
+          var type = 'date';
+          break;
+        default :
+          var type = 'text';
+      }
       // Build our input
       // todo build it based on the type of input in data-type
-      var html = "<input type='text' value='" + value + "' />"
+      var html = "<input type='" + type + "' value='" + value + "' />"
       // Inject the input and focus it.
       $(td).html(html);
       $(td).find('input').css('width', colSize - 20);
