@@ -34,7 +34,7 @@ $(document).on('ready page:load', function () {
           var type = 'date';
           break;
         case 'datetime':
-          var type = 'datetime';
+          var type = 'datetime-local';
           break;
         default :
           var type = 'text';
