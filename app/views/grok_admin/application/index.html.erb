@@ -1,50 +1,26 @@
 <div class="content">
   <div class="ui top attached segment">
 
+    <div class="ui vertical accordion menu">
 
-    <div class="ui ordered vertical steps">
-      <a class="step">
-        <div class="content">
-          <div class="title">Previous Step</div>
-          <div class="description">Description</div>
+      <% @models.each do |model| %>
+      <div class="item">
+        <a class="active title">
+          <i class="dropdown icon"></i>
+          <%= model.name %>
+        </a>
+        <div class="active content">
+          <div class="ui form">
+            <div class="grouped fields">
+
+              <%= model.inspect %>
+
+            </div>
+          </div>
         </div>
-      </a>
-      <a class="active step">
-        <div class="content">
-          <div class="title">Active Step</div>
-          <div class="description">Description</div>
-        </div>
-      </a>
-      <a class="disabled step">
-        <div class="content">
-          <div class="title">Disabled Step</div>
-          <div class="description">Description</div>
-        </div>
-      </a>
+      </div>
+      <% end %>
     </div>
 
-
-    <table class="ui celled stripped table">
-      <thead>
-      <tr>
-        <th>Model</th>
-        <th>Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @models.each do |model| %>
-        <tr>
-          <td>
-            <%= model.name %>
-          </td>
-          <td>
-
-          </td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-
-    <div class="ui top attached label">System Models</div>
   </div>
 </div>
