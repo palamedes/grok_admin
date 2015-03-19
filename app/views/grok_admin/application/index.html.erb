@@ -13,7 +13,23 @@
         <div class="ui form">
           <div class="grouped fields">
 
-            <%= model.inspect %>
+            <table class="ui table">
+              <thead>
+              <tr>
+                <% model.column_names.each do |column| %>
+                  <th><%= column %></th>
+                <% end %>
+              </tr>
+              </thead>
+              <tbody>
+              <% model.all.each do |obj| %>
+              <tr>
+                <% model.column_names.each do |column| %>
+                <td><%= obj[column] %></td>
+                <% end %>
+              </tr>
+              </tbody>
+            </table>
 
           </div>
         </div>
