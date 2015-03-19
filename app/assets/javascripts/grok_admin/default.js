@@ -38,7 +38,7 @@ $(document).on('ready page:load', function () {
       }
       // Build our input
       // todo build it based on the type of input in data-type
-      var html = "<input type='" + type + "' value='" + value + "' />"
+      var html = "<div class='ui mini input'><input type='" + type + "' value='" + value + "' /></div>";
       // Inject the input and focus it.
       $(td).html(html);
       $(td).find('input').css('width', colSize - 20);
