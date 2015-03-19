@@ -97,9 +97,7 @@ body {
     :-moz-placeholder,
     ::-moz-placeholder,
     :-ms-input-placeholder,
-    ::-webkit-datetime-edit-day-field,
-    ::-webkit-datetime-edit-month-field,
-    ::-webkit-datetime-edit-year-field {
+    ::-webkit-datetime-edit {
       color: #F0F0F0 !important;
     }
     &[type=date] {
