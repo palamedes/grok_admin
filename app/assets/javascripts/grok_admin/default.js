@@ -10,4 +10,6 @@ $(document).on('ready page:load', function () {
     $('.popup').popup();
     // Tabs
     $('.tabular.menu .item').tab();
+    // Date pickers
+    $('.datepicker').datepicker({"dateFormat": "DD, d MM, yy"});
 });
