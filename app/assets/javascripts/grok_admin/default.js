@@ -33,8 +33,6 @@ $(document).on('ready page:load', function () {
         case 'date':
           var type = 'date';
           break;
-        case 'datetime':
-          var type = 'datetime-local';
           break;
         default :
           var type = 'text';
