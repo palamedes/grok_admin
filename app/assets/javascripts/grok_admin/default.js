@@ -43,6 +43,10 @@ $(document).on('ready page:load', function () {
       $(td).html(html);
       $(td).find('input').css('width', colSize - 20);
     });
+
+    // Hide the edit and delete button.
+    $(this).hide();
+    $(this).siblings().hide();
   });
 
 });
