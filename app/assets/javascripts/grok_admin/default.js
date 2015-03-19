@@ -18,8 +18,8 @@ $(document).on('ready page:load', function () {
     $(document).on('click', 'i.edit.icon', function(e) {
         $columns = $(this).parent().siblings();
 
-        $columns.each(function() {
-            console.log(arguments);
+        $columns.each(function(index, $td) {
+            console.log($td.text());
         });
     });
 
