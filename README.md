@@ -1,6 +1,6 @@
 # GrokAdmin
 
-Learning to make gems ~ Please ignore this =)
+This is a proof of concept mountable engine in Rails 4 that should provide an administration for editing all of the models in the application.  (Very, proof of concept)
 
 ## Installation
 
