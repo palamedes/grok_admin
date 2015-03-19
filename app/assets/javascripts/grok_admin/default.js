@@ -65,6 +65,14 @@ $(document).on('ready page:load', function () {
     $columns.each(function(index, td) {
       $(td).html($(td).data('original-value'));
     });
+
+    // Hide the save and undo button.
+    $(this).hide();
+    $(this).siblings().hide();
+    // Show the edit and delete icons
+    $(this).siblings('i.edit.icon').show();
+    $(this).siblings('i.delete.icon').show();
+
   });
 
 });
