@@ -4,6 +4,8 @@ module GrokAdmin
 
   class << self
 
+    attr_accessor :application
+
     def application
       @application ||= ::GrokAdmin::Application.new
     end
