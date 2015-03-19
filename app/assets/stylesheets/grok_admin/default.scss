@@ -93,18 +93,18 @@ body {
 
   input.editor {
     padding: 3px 0 3px 3px !important;
-    &::-webkit-input-placeholder,
-    &:-moz-placeholder,
-    &::-moz-placeholder,
-    &:-ms-input-placeholder,
-    &::-webkit-datetime-edit {
-      color: #F0F0F0 !important;
-    }
     &[type=date] {
       min-width: 150px !important;
     }
   }
 
+  .ui.form ::-webkit-input-placeholder,
+  .ui.form :-moz-placeholder,
+  .ui.form ::-moz-placeholder,
+  .ui.form :-ms-input-placeholder,
+  .ui.form ::-webkit-datetime-edit {
+    color: rgba(140,140,140,0.6) !important;
+  }
 }
 
 footer {
