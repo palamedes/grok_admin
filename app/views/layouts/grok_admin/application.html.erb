@@ -8,7 +8,37 @@
 </head>
 <body>
 
-<%= yield %>
+<div id="wrap">
+  <main>
+
+    <header class="ui large menu">
+      <div class="content">
+        <div class="header item">
+          Administration
+        </div>
+        <div class="right menu">
+
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="ui grid">
+        <div class="sixteen wide column">
+          <p id="notice"><%= notice %></p>
+        </div>
+      </div>
+    </div>
+
+    <%= yield %>
+
+  </main>
+</div>
+<footer>
+  <div class="content">
+    Copyright &copy;2015 Grok-Interactive
+  </div>
+</footer>
 
 </body>
 </html>

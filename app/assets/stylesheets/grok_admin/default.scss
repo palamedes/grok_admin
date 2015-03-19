@@ -1,0 +1,37 @@
+$footerHeight: 25px;
+$contentWidth: 95%;
+// Resets and Sticky Footer
+
+* {
+  margin:0;
+  padding:0;
+}
+
+html, body {
+  height: 100%;
+}
+
+div#wrap {
+  min-height: 100%;
+}
+
+main {
+  overflow: visible;
+  padding-bottom: $footerHeight;
+}
+
+footer {
+  position: relative;
+  margin-top: -$footerHeight;
+  height: $footerHeight;
+  clear:both;
+}
+
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;
+}
