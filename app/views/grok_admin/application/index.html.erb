@@ -20,7 +20,7 @@
                 <% model.column_names.each do |column| %>
                   <th class="<%= column %>">
                     <%= column %><br />
-                    <small><%= model.column_names[column].type %></small>
+                    <small><%= model.columns_hash[column].type.to_s %></small>
                   </th>
                 <% end %>
               </tr>
