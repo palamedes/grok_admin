@@ -46,10 +46,12 @@ body {
 
   table.ui.table {
     background: inherit;
-    td, th {
+    td {
       word-break: break-word;
+    }
+    td, th {
       &.id {
-        min-width: 40px;
+        min-width: 60px;
       }
       &.actions {
         width: 200px;
