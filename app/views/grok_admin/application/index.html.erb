@@ -8,9 +8,15 @@
     </tr>
     </thead>
     <tbody>
-    <%= @models.each do |model| %>
-      <tr><%= model.name %></tr>
-      <tr></tr>
+    <% @models.each do |model| %>
+      <tr>
+        <td>
+          <%= model.name %>
+        </td>
+        <td>
+
+        </td>
+      </tr>
     <% end %>
     </tbody>
   </table>
