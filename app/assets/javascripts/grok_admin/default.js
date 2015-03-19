@@ -16,8 +16,12 @@ $(document).on('ready page:load', function () {
 
     // When the user clicks the edit icon for a row do things!
     $(document).on('click', 'i.edit.icon', function(e) {
-        console.log(this);
-        console.log($(this).parent());
+        $columns = $(this).parent().siblings();
+        console.log($row);
+
+        $columns.each(function(col) {
+            console.log(col);
+        });
     });
 
 });
