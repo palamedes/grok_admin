@@ -1,26 +1,24 @@
 <div class="content">
-  <div class="ui segment">
 
-    <div class="ui vertical accordion menu">
+  <div class="ui vertical accordion menu fluid">
 
-      <% @models.each do |model| %>
-      <div class="item">
-        <a class="active title">
-          <i class="dropdown icon"></i>
-          <%= model.name %>
-        </a>
-        <div class="active content">
-          <div class="ui form">
-            <div class="grouped fields">
+    <% @models.each do |model| %>
+    <div class="item">
+      <a class="title">
+        <i class="dropdown icon"></i>
+        <%= model.name %>
+      </a>
+      <div class="content">
+        <div class="ui form">
+          <div class="grouped fields">
 
-              <%= model.inspect %>
+            <%= model.inspect %>
 
-            </div>
           </div>
         </div>
       </div>
-      <% end %>
     </div>
-
+    <% end %>
   </div>
+
 </div>
