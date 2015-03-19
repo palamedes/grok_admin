@@ -18,7 +18,10 @@
               <tr>
                 <th></th>
                 <% model.column_names.each do |column| %>
-                  <th class="<%= column %>"><%= column %></th>
+                  <th class="<%= column %>">
+                    <%= column %><br />
+                    <small><%= model.column_names[column].type %></small>
+                  </th>
                 <% end %>
               </tr>
               </thead>
