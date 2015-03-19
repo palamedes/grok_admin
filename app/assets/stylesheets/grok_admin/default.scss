@@ -98,11 +98,11 @@ body {
     }
   }
 
-  .ui.form ::-webkit-input-placeholder,
-  .ui.form :-moz-placeholder,
-  .ui.form ::-moz-placeholder,
-  .ui.form :-ms-input-placeholder,
-  .ui.form ::-webkit-datetime-edit {
+  input.editor ::-webkit-input-placeholder,
+  input.editor :-moz-placeholder,
+  input.editor ::-moz-placeholder,
+  input.editor :-ms-input-placeholder,
+  input.editor ::-webkit-datetime-edit {
     color: rgba(140,140,140,0.6) !important;
   }
 }
