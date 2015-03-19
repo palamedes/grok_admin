@@ -10,8 +10,10 @@ The second version will extend that raw table editor to add a more robust admin 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'grok_admin'
+gem 'grok_admin', :git => 'git://github.com/palamedes/grok_admin.git'
 ```
+
+_Note: this gem isn't published yet, so the :git path is required_
 
 ## Routing
 
