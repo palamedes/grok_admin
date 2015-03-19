@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = GrokAdmin::VERSION
   spec.authors       = ["Jason Ellis"]
   spec.email         = ["palamedes@rocketmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = 'Learning to write gems ~ Please ignore'
+  spec.description   = 'Learning to write gems ~ Please ignore'
   spec.homepage      = ""
   spec.license       = "MIT"
 
