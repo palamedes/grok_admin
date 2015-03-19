@@ -13,10 +13,10 @@
         <div class="ui form">
           <div class="grouped fields">
 
-            <table class="ui table">
+            <table class="ui definition table">
               <thead>
               <tr>
-                <td></td>
+                <th></th>
                 <% model.column_names.each do |column| %>
                   <th class="<%= column %>"><%= column %></th>
                 <% end %>
@@ -25,11 +25,11 @@
               <tbody>
               <% model.all.each do |obj| %>
               <tr>
-                <th>
-                  <a class="ui small icon button" href="#">
+                <td>
+                  <a class="" href="#">
                     <i class="edit icon"></i>
                   </a>
-                </th>
+                </td>
                 <% model.column_names.each do |column| %>
                 <td class="<%= column %>"><%= obj[column] %></td>
                 <% end %>
