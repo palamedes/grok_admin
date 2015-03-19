@@ -29,12 +29,8 @@
               <% model.all.each do |obj| %>
               <tr>
                 <td>
-                  <a class="" href="#">
-                    <i class="black edit icon"></i>
-                  </a>
-                  <a class="" href="#">
-                    <i class="red delete icon"></i>
-                  </a>
+                  <i class="black edit icon"></i>
+                  <i class="red delete icon"></i>
                 </td>
                 <% model.column_names.each do |column| %>
                 <td class="<%= column %>"><%= obj[column] %></td>

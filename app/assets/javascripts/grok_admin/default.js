@@ -12,4 +12,12 @@ $(document).on('ready page:load', function () {
     $('.tabular.menu .item').tab();
     // Date pickers
     $('.datepicker').datepicker({"dateFormat": "DD, d MM, yy"});
+
+
+    // When the user clicks the edit icon for a row do things!
+    $(document).on('click', 'i.edit.icon', function(e) {
+        console.log(this);
+        console.log($(this).parent());
+    });
+
 });
