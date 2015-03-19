@@ -1,6 +1,6 @@
 module ActionDispatch
   module Routing
-    module Mapper
+    class Mapper
 
       # Allow a user to set the route path to anything
       def grokadmin_to route_name
