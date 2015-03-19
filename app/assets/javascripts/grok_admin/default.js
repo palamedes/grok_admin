@@ -51,10 +51,20 @@ $(document).on('ready page:load', function () {
     // Hide the edit and delete button.
     $(this).hide();
     $(this).siblings().hide();
-    // Show the save and undu icons
+    // Show the save and undo icons
     $(this).siblings('i.save.icon').show();
     $(this).siblings('i.undo.icon').show();
 
+  });
+
+
+  // When a user clicks the undo icon, undo!
+  $(document).on('click', 'i.undo.icon', function(e) {
+    // Get the columns for this edit icon based on its siblings (so we dont get it)
+    $columns = $(this).parent().siblings();
+    $columns.each(function(index, td) {
+      $(td).html($(td).data('original-value'));
+    });
   });
 
 });
