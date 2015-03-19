@@ -1,5 +1,9 @@
 require "grok_admin/version"
 
 module GrokAdmin
-  # Your code goes here...
+
+  def test
+    "Success!"
+  end
+
 end
