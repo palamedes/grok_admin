@@ -16,19 +16,32 @@
             <table class="ui table">
               <thead>
               <tr>
+                <td></td>
                 <% model.column_names.each do |column| %>
-                  <th><%= column %></th>
+                  <th class="<%= column %>"><%= column %></th>
                 <% end %>
               </tr>
               </thead>
               <tbody>
               <% model.all.each do |obj| %>
               <tr>
+                <th>
+                  <a class="ui small icon button" href="#">
+                    <i class="edit icon"></i>
+                  </a>
+                </th>
                 <% model.column_names.each do |column| %>
-                <td><%= obj[column] %></td>
+                <td class="<%= column %>"><%= obj[column] %></td>
                 <% end %>
               </tr>
               <% end %>
+              <tr>
+                <td colspan="<%= model.column_names.count + 1 %>">
+                  <a class="ui right floated small primary labeled icon button" href="#">
+                    <i class="add icon"></i> Add Record
+                  </a>
+                </td>
+              </tr>
               </tbody>
             </table>
 
