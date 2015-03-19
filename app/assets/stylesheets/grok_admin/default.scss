@@ -93,11 +93,11 @@ body {
 
   input.editor {
     padding: 3px 0 3px 3px !important;
-    ::-webkit-input-placeholder,
-    :-moz-placeholder,
-    ::-moz-placeholder,
-    :-ms-input-placeholder,
-    ::-webkit-datetime-edit {
+    &::-webkit-input-placeholder,
+    &:-moz-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder,
+    &::-webkit-datetime-edit {
       color: #F0F0F0 !important;
     }
     &[type=date] {
