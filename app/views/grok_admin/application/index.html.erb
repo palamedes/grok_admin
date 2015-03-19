@@ -1,3 +1,20 @@
 
+<div class="ui top attached segment">
+  <table class="ui celled stripped table">
+    <thead>
+    <tr>
+      <th>Model</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= @models.each do |model| %>
+      <tr><%= model.name %></tr>
+      <tr></tr>
+    <% end %>
+    </tbody>
+  </table>
 
-<%= @models.inspect %>
+  <div class="ui top attached label">System Models</div>
+</div>
+
