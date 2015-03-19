@@ -10,17 +10,13 @@ Add this line to your application's Gemfile:
 gem 'grok_admin'
 ```
 
-And then execute:
+## Routing
 
-    $ bundle
+In your routes file add the following line, where `:administration` is the route you would like to use as your admin route.
 
-Or install it yourself as:
-
-    $ gem install grok_admin
-
-## Usage
-
-TODO: Write usage instructions here
+```ruby
+grokadmin_to :administration
+```
 
 ## Contributing
 
