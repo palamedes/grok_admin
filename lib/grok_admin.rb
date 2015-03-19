@@ -1,5 +1,6 @@
 require "grok_admin/version"
 require "grok_admin/engine"
+require "grok_admin/routing"
 
 module GrokAdmin
 
