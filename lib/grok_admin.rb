@@ -2,8 +2,13 @@ require "grok_admin/version"
 
 module GrokAdmin
 
-  def test
-    "Success!"
+  class << self
+
+    def test
+      "Success!"
+    end
+
+
   end
 
 end
