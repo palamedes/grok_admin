@@ -17,12 +17,13 @@
               <thead>
               <tr>
                 <th></th>
-                <% model.column_names.each do |column| %>
+                <% #model.column_names.each do |column| %>
+                <% get_columns(model).each do |column| %>
                   <th class="<%= column %>">
                     <%= column %><br />
                     <small>
-                      <% if isRelation? model, column %>
-                      <em><%= getRelationModel(model, column).try(:name) %></em>
+                      <% if is_relation? model, column %>
+                      <em><%= get_relation_model(model, column).try(:name) %></em>
                       <% else %>
                       <%= model.columns_hash[column].type.to_s %>
                       <% end %>
@@ -40,7 +41,8 @@
                   <i class="green save icon"></i>
                   <i class="red undo icon"></i>
                 </td>
-                <% model.column_names.each do |column| %>
+                <% #model.column_names.each do |column| %>
+                <% get_columns(model).each do |column| %>
                 <%# NO SPACES between the td and the column data or it causes issues %>
                 <td class="<%= column %> editable" data-type="<%= model.columns_hash[column].type.to_s %>"><%= obj[column] %></td>
                 <% end %>
