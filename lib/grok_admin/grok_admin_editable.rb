@@ -27,10 +27,10 @@ module GrokAdmin
 
       # Get a list of all columns disallowed
       def get_grok_admin_disallowed_fields
-        if @@grok_admin_fields_allowed.empty?
-          [self.primary_key, 'created_at', 'updated_at']
-        else
+        if defined? @@grok_admin_fields_allowed
           self.column_names - @@grok_admin_fields_allowed.map(&:to_s)
+        else
+          [self.primary_key, 'created_at', 'updated_at']
         end
       end
 
