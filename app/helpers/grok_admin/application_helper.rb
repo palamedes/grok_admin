@@ -33,5 +33,10 @@ module GrokAdmin
       columns << 'updated_at'
     end
 
+    # Output the column type to string
+    def get_column_type model, column
+      model.columns_hash[column].try(:type).to_s
+    end
+
   end
 end
