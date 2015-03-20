@@ -33,8 +33,9 @@ grokadmin_to :administration
 
 
 ## TODO
+#### Notes to myself on things that need to be done, in no particular order.
 
-  * Pagination of lists
+  * Pagination of lists using JSON
   * Get Saving working for edits
   * Get Error reporting to work when saving fails due to error
   * Get Deleting working for edits
@@ -46,5 +47,7 @@ grokadmin_to :administration
   * Create model method for setting which attributes are editable and which are not
   * Create model method for setting which attributes are visible and which are not
   * Create model method for setting if a model is to be hidden entirely
+  * Figure out how to get STI models instead of the base model.. that will be interesting
+  * If a user closes accordion while editing, undo all edits.
   
   
