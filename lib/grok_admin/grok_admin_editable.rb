@@ -27,6 +27,11 @@ module GrokAdmin
         self.column_names - @@grok_admin_fields_allowed.map(&:to_s)
       end
 
+      # Simple getter
+      def get_grok_admin_fields_allowed
+        @@grok_admin_fields_allowed
+      end
+
       # Are there ANY editable fields?
       def any_grok_admin_editable_columns?
         self.column_names != @@grok_admin_fields_allowed.map(&:to_s)
