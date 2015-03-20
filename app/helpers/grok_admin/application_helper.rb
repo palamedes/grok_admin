@@ -10,9 +10,9 @@ module GrokAdmin
     # Reflect on all the associations and tell me the actual model of the column I'm sending as an association
     def get_relation_model model, column
       # Get associations from the model, Only those that are :belongs_to, and map those to key, model
-      associations = Assignment.reflect_on_all_associations
-                               .select{|assoc| assoc.macro == :belongs_to }
-                               .map{|assoc| [ assoc.foreign_key, assoc.plural_name.singularize.classify.constantize ] }
+      associations = model.reflect_on_all_associations
+                          .select{|assoc| assoc.macro == :belongs_to }
+                          .map{|assoc| [ assoc.foreign_key, assoc.plural_name.singularize.classify.constantize ] }
       # now return the model
       Hash[*associations.flatten][column]
     end
