@@ -11,10 +11,31 @@ module GrokAdmin
 
       # Class method which allows you to set which fields are editable
       #  for now they are just stored in a class variable.
+      #
+      # To allow fields you simply pass them to the method as an array, or use the `:only` convention
+      # `grok_admin_editable :foo, :bar, :baz`
+      # `grok_admin_editable only: [:foo, :bar, :baz]`
+      #
+      # or you can use the :except convention to get ALL except the list;
+      #  `except: [:foo]`
+      #
       def grok_admin_editable *arguments
-        arguments.each do |arg|
-          @@grok_admin_fields_allowed << arg if arg.is_a? Symbol
+        # :only certain fields
+        if defined? arguments[:only]
+          @@grok_admin_fields_allowed << arguments[:only]
+        # ALL fields :except
+        elsif defined? arguments[:except]
+          @@grok_admin_fields_allowed << self.column_names - arguments[:except]
+        # ALL fields
+        elsif arguments.nil?
+          @@grok_admin_fields_allowed << self.column_names
+        # Only fields listed in the array
+        else
+          arguments.each do |arg|
+            @@grok_admin_fields_allowed << arg if arg.is_a? Symbol
+          end
         end
+        @@grok_admin_fields_allowed.flatten!
       end
 
       # A test to see if there are editable items

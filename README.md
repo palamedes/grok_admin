@@ -23,6 +23,31 @@ In your routes file add the following line, where `:administration` is the route
 grokadmin_to :administration
 ```
 
+## Making model fields editable
+
+In order to allow fields to be edited you must add the `grok_admin_editable` method call to the top of your models with a list of all the fields that are allowed to be edited.
+
+Not adding this to the model means no fields are editable, but the model will still show up.
+
+Calling just `grok_admin_editable` with no arguments means ALL fields are editable.
+
+To allow editing of specific fields you simply pass them to the method as an array;
+
+```grok_admin_editable :foo, :bar, :baz```
+
+Or use the `:only` convention;
+
+```grok_admin_editable only: :foo```
+or
+```grok_admin_editable only: [:foo, :bar, :baz]```
+
+You may also the `:except` convention to get ALL except the list;
+
+```except: :foo```
+or 
+```except: [:foo, :bar]```
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/grok_admin/fork )
