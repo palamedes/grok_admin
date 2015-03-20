@@ -10,10 +10,9 @@ module GrokAdmin
       # Class method which allows you to set which fields are editable
       #  for now they are just stored in a class variable.
       def grok_admin_editable *arguments
-        cattr_accessor :grok_admin_fields_allowed
-        write_attribute :grok_admin_fields_allowed, []
+        @@grok_admin_fields_allowed = []
         arguments.each do |arg|
-          write_attribute(:grok_admin_fields_allowed, self.grok_admin_fields_allowed << arg) if arg.is_a? Symbol
+          @@grok_admin_fields_allowed << arg if arg.is_a? Symbol
         end
       end
 
