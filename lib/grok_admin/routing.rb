@@ -1,4 +1,4 @@
-# Add a class to the routing mapper to allow us to custom set the route name
+# Add an action to the routing mapper class to allow us to custom set the route name
 module ActionDispatch
   module Routing
     class Mapper
