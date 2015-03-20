@@ -20,7 +20,13 @@
                 <% model.column_names.each do |column| %>
                   <th class="<%= column %>">
                     <%= column %><br />
-                    <small><%= model.columns_hash[column].type.to_s %></small>
+                    <small>
+                      <% if isRelation? model, column %>
+                      <em><%= column %></em>
+                      <% else %>
+                      <%= model.columns_hash[column].type.to_s %>
+                      <% end %>
+                    </small>
                   </th>
                 <% end %>
               </tr>
