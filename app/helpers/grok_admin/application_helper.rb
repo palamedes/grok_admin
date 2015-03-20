@@ -38,5 +38,15 @@ module GrokAdmin
       model.columns_hash[column].try(:type).to_s
     end
 
+    # Is this column editable?
+    def is_editable? model, column
+      # A list of columns we automatically deny
+      disallow = [model.primary_key, 'created_at', 'updated_at']
+      # Now go through the model itself and ask if the model has any that are disallowed
+      # TODO
+      # is our column one of the disallowed?
+      disallow.exclude? column
+    end
+
   end
 end
