@@ -36,10 +36,12 @@
               <% model.all.each do |obj| %>
               <tr>
                 <td>
-                  <i class="black edit icon"></i>
+                  <% if model.any_grok_admin_editable_columns? %>
+                    <i class="black edit icon"></i>
+                    <i class="green save icon"></i>
+                    <i class="red undo icon"></i>
+                  <% end %>
                   <i class="red delete icon"></i>
-                  <i class="green save icon"></i>
-                  <i class="red undo icon"></i>
                 </td>
                 <% #model.column_names.each do |column| %>
                 <% get_columns(model).each do |column| %>
