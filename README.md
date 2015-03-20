@@ -34,6 +34,7 @@ grokadmin_to :administration
 
 ## TODO
 
+  * Pagination of lists
   * Get Saving working for edits
   * Get Error reporting to work when saving fails due to error
   * Get Deleting working for edits
