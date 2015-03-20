@@ -18,7 +18,11 @@ module GrokAdmin
 
       # A test to see if there are editable items
       def is_grok_admin_editable column
-        @@grok_admin_fields_allowed.include? column.to_sym
+        if @@grok_admin_fields_allowed
+          @@grok_admin_fields_allowed.include? column.to_sym
+        else
+          true
+        end
       end
 
     end
