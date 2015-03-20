@@ -18,20 +18,17 @@ module GrokAdmin
 
       # A test to see if there are editable items
       def is_grok_admin_editable column
-        if defined? @@grok_admin_fields_allowed
-          @@grok_admin_fields_allowed.include? column.to_sym
-        else
-          true
-        end
+        @@grok_admin_fields_allowed.include? column.to_sym
       end
 
       # Get a list of all columns disallowed
       def get_grok_admin_disallowed_fields
-        if defined? @@grok_admin_fields_allowed
-          self.column_names - @@grok_admin_fields_allowed.map(&:to_s)
-        else
-          [self.primary_key, 'created_at', 'updated_at']
-        end
+        self.column_names - @@grok_admin_fields_allowed.map(&:to_s)
+      end
+
+      # Are there ANY editable fields?
+      def any_grok_admin_editable_columns?
+        self.column_names != @@grok_admin_fields_allowed.map(&:to_s)
       end
 
     end
