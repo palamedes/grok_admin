@@ -53,6 +53,10 @@ body {
       &.id {
         min-width: 60px;
       }
+      &.created_at,
+      &.updated_at {
+        width: 200px;
+      }
       &.actions {
         width: 200px;
         text-align:center;
