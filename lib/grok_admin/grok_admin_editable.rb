@@ -21,10 +21,10 @@ module GrokAdmin
       #
       def grok_admin_editable *arguments
         # :only certain fields
-        if defined? arguments[:only]
+        if arguments[:only].present?
           @@grok_admin_fields_allowed << arguments[:only]
         # ALL fields :except
-        elsif defined? arguments[:except]
+        elsif arguments[:except].present?
           @@grok_admin_fields_allowed << self.column_names - arguments[:except]
         # ALL fields
         elsif arguments.nil?
