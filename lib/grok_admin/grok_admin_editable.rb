@@ -25,7 +25,11 @@ module GrokAdmin
           @@grok_admin_fields_allowed << arguments.first[:only]
         # ALL fields :except
         elsif arguments.first[:except].present?
-          @@grok_admin_fields_allowed << self.column_names.map(&:to_sym) - arguments.first[:except]
+          if arguments.first[:except].is_a? Array
+            @@grok_admin_fields_allowed << self.column_names.map(&:to_sym) - arguments.first[:except]
+          else
+            @@grok_admin_fields_allowed << self.column_names.map(&:to_sym) - Array(arguments.first[:except])
+          end
         # ALL fields
         elsif arguments.nil?
           @@grok_admin_fields_allowed << self.column_names.map(&:to_sym)
