@@ -22,7 +22,7 @@
                     <%= column %><br />
                     <small>
                       <% if isRelation? model, column %>
-                      <em><%= column %></em>
+                      <em><%= getRelationModel(model, column).inspect %></em>
                       <% else %>
                       <%= model.columns_hash[column].type.to_s %>
                       <% end %>
