@@ -40,12 +40,8 @@ module GrokAdmin
 
     # Is this column editable?
     def is_editable? model, column
-      # A list of columns we automatically deny
-      disallow = [model.primary_key, 'created_at', 'updated_at']
-      # Now go through the model itself and ask if the model has any that are disallowed
-      # TODO
       # is our column one of the disallowed?
-      disallow.exclude? column
+      model.get_grok_admin_disallowed_fields.exclude? column
     end
 
   end
