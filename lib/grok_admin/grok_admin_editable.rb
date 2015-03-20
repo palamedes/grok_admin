@@ -23,17 +23,21 @@ module GrokAdmin
     end
 
     module ClassMethods
-      def is_grok_admin_editable(options = {})
+      def is_grok_admin_editable *arguments
+        @@grok_admin_fields_allowed = []
+        arguments.each do |arg|
+          @@grok_admin_fields_allowed << arg if arg.is_a? Symbol
+        end
 
-        include GrokAdmin::GrokAdminEditable::LocalInstanceMethods
+#        include GrokAdmin::GrokAdminEditable::LocalInstanceMethods
       end
     end
 
-    module LocalInstanceMethods
-      def grok_admin_editable (string)
-        write_attribute(self.class.grok_admin_fields_allowed, string)
-      end
-    end
+    # module LocalInstanceMethods
+    #   def grok_admin_editable symbol
+    #     write_attribute self.class.grok_admin_fields_allowed, symbol
+    #   end
+    # end
   end
 end
 
