@@ -22,6 +22,7 @@ module GrokAdmin
       def grok_admin_editable *arguments
         # :only certain fields
         if arguments[:only].present?
+puts "TEST 1"
           @@grok_admin_fields_allowed << arguments[:only]
         # ALL fields :except
         elsif arguments[:except].present?
@@ -31,7 +32,8 @@ module GrokAdmin
           @@grok_admin_fields_allowed << self.column_names
         # Only fields listed in the array
         else
-          arguments.each do |arg|
+puts "TEST 2"
+          arguments.flatten.each do |arg|
             @@grok_admin_fields_allowed << arg if arg.is_a? Symbol
           end
         end
