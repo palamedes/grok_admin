@@ -22,10 +22,10 @@ module GrokAdmin
       def grok_admin_editable *arguments
         # :only certain fields
         if arguments[:only].present?
-          @@grok_admin_fields_allowed << arguments.first[:only]
+          @@grok_admin_fields_allowed << arguments[0][:only]
         # ALL fields :except
         elsif arguments[:except].present?
-          @@grok_admin_fields_allowed << self.column_names - arguments.first[:except]
+          @@grok_admin_fields_allowed << self.column_names - arguments[0][:except]
         # ALL fields
         elsif arguments.nil?
           @@grok_admin_fields_allowed << self.column_names
