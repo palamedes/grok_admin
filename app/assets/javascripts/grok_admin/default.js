@@ -23,6 +23,10 @@ $(document).on('ready page:load', function () {
     // Get the columns for this edit icon based on its siblings (so we dont get it)
     $columns = $(this).parent().siblings();
     $columns.each(function(index, td) {
+      // If this column isn't editable, skip it.
+      if (!$(td).hasClass('editable')) {
+        return true;
+      }
       // Get our col size so we know how big to make the input
       var colSize = $(td).outerWidth();
       // Get our column data
