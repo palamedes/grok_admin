@@ -25,7 +25,7 @@ module GrokAdmin
           @@grok_admin_fields_allowed << arguments.first[:only]
         # ALL fields :except
         elsif arguments.first[:except].present?
-          @@grok_admin_fields_allowed << self.column_names - arguments[:except]
+          @@grok_admin_fields_allowed << self.column_names - arguments.first[:except]
         # ALL fields
         elsif arguments.nil?
           @@grok_admin_fields_allowed << self.column_names
