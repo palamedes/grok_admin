@@ -1,20 +1,4 @@
 # Add a method to the active record base model for allowing edits
-# module ActiveRecord
-#   class Base
-#
-#     @@grok_admin_fields_allowed = []
-#
-#     # Define whats allowed to be edited for this method
-#     def grok_admin_editable *arguments
-#       arguments.each do |arg|
-#         @@grok_admin_fields_allowed << arg if arg.is_a? Symbol
-#       end
-#     end
-#
-#   end
-# end
-
-
 module GrokAdmin
   module GrokAdminEditable
     extend ActiveSupport::Concern
@@ -23,21 +7,21 @@ module GrokAdmin
     end
 
     module ClassMethods
-      def is_grok_admin_editable *arguments
+      # Class method which allows you to set which fields are editable
+      #  for now they are just stored in a class variable.
+      def grok_admin_editable *arguments
         @@grok_admin_fields_allowed = []
         arguments.each do |arg|
           @@grok_admin_fields_allowed << arg if arg.is_a? Symbol
         end
-
-#        include GrokAdmin::GrokAdminEditable::LocalInstanceMethods
       end
-    end
 
-    # module LocalInstanceMethods
-    #   def grok_admin_editable symbol
-    #     write_attribute self.class.grok_admin_fields_allowed, symbol
-    #   end
-    # end
+      # A test to see if there are editable items
+      def is_grok_admin_editable column
+        @@grok_admin_fields_allowed.include? column.to_sym
+      end
+
+    end
   end
 end
 
