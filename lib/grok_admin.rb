@@ -1,7 +1,7 @@
 require "grok_admin/version"
 require "grok_admin/engine"
 require "grok_admin/routing"
-require "grok_admin/models"
+require "grok_admin/grok_admin_editable"
 
 module GrokAdmin
 
