@@ -44,7 +44,7 @@
                 <% #model.column_names.each do |column| %>
                 <% get_columns(model).each do |column| %>
                 <%# NO SPACES between the td and the column data or it causes issues %>
-                <td class="<%= column %> editable" data-type="<%= get_column_type model, column %>"><%= obj[column] %></td>
+                <td class="<%= column %> <%= "editable" if is_editable? model, column %>" data-type="<%= get_column_type model, column %>"><%= obj[column] %></td>
                 <% end %>
               </tr>
               <% end %>
