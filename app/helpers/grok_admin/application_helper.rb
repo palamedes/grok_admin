@@ -23,7 +23,7 @@ module GrokAdmin
       # Get our models primary key name
       primary_key = model.primary_key
       # Get all the column names from the model minus the primary key and time stamps
-      columns = model.column_names - Array(primary_key, :created_at, :updated_at)
+      columns = model.column_names - [primary_key, 'created_at', 'updated_at']
       # Now put the primary key on the front of the array
       # This will be redundant for 99.9% of the tables out there
       #  but I always want the primary key to be the left most column in the list
