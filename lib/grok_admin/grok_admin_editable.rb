@@ -18,42 +18,42 @@ module GrokAdmin
       #  `except: [:foo]`
       #
       def grok_admin_editable *arguments
-        @@grok_admin_fields_allowed = []
+        @grok_admin_fields_allowed = []
         # :only certain fields
         if arguments.first[:only].present?
-          @@grok_admin_fields_allowed << arguments.first[:only]
+          @grok_admin_fields_allowed << arguments.first[:only]
         # ALL fields :except
         elsif arguments.first[:except].present?
           if arguments.first[:except].is_a? Array
-            @@grok_admin_fields_allowed << self.column_names.map(&:to_sym) - arguments.first[:except]
+            @grok_admin_fields_allowed << self.column_names.map(&:to_sym) - arguments.first[:except]
           else
-            @@grok_admin_fields_allowed << self.column_names.map(&:to_sym) - Array(arguments.first[:except])
+            @grok_admin_fields_allowed << self.column_names.map(&:to_sym) - Array(arguments.first[:except])
           end
         # ALL fields
         elsif arguments.nil?
-          @@grok_admin_fields_allowed << self.column_names.map(&:to_sym)
+          @grok_admin_fields_allowed << self.column_names.map(&:to_sym)
         # Only fields listed in the array
         # else
         #   arguments.flatten.each do |arg|
         #     @@grok_admin_fields_allowed << arg if arg.is_a? Symbol
         #   end
         end
-        @@grok_admin_fields_allowed.flatten!
+        @grok_admin_fields_allowed.flatten!
       end
 
       # A test to see if there are editable items
       def is_grok_admin_editable column
-        @@grok_admin_fields_allowed.include? column.to_sym
+        @grok_admin_fields_allowed.include? column.to_sym
       end
 
       # Get a list of all columns disallowed
       def get_grok_admin_disallowed_fields
-        self.column_names - @@grok_admin_fields_allowed.map(&:to_s)
+        self.column_names - @grok_admin_fields_allowed.map(&:to_s)
       end
 
       # Simple getter
       def get_grok_admin_fields_allowed
-        @@grok_admin_fields_allowed
+        @grok_admin_fields_allowed
       end
 
       # Are there ANY editable fields?
