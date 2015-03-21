@@ -7,8 +7,6 @@ module GrokAdmin
     end
 
     module ClassMethods
-      @@grok_admin_fields_allowed = []
-
       # Class method which allows you to set which fields are editable
       #  for now they are just stored in a class variable.
       #
@@ -20,6 +18,7 @@ module GrokAdmin
       #  `except: [:foo]`
       #
       def grok_admin_editable *arguments
+        @@grok_admin_fields_allowed = []
         # :only certain fields
         if arguments.first[:only].present?
           @@grok_admin_fields_allowed << arguments.first[:only]
