@@ -48,6 +48,7 @@ module GrokAdmin
 
       # Get a list of all columns disallowed
       def get_grok_admin_disallowed_fields
+        @grok_admin_fields_allowed ||= []
         self.column_names - @grok_admin_fields_allowed.map(&:to_s)
       end
 
