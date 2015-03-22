@@ -70,8 +70,12 @@ $(document).on('ready page:load', function () {
     var route = $(this).parents('table').data('route');
     // Get our model
     var model = $(this).parents('table').data('model');
-    // Get our serialized data for this object
-    var data = 'resource=' + model + '&' + $(this).parents('tr').find('input').serialize();
+    // Get our ID & primary key
+    var key = $(this).parents('tr').data('key');
+    var id = $(this).parents('tr').data('id');
+    // Get our serialized data for this object starting with the resource, key and id info
+    var data = 'resource=' + model + '&key=' + key + '&id=' + id;
+    data += $(this).parents('tr').find('input').serialize();
     // Fire off a patch to update the data
     $.ajax({
       type: "PATCH",
