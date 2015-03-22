@@ -16,7 +16,7 @@ module GrokAdmin
       # Get our records
       @records = @model.limit(GrokAdmin::PAGINATION_SIZE).offset(offset)
       # Return as a json response
-      render json: @records
+      render json: {records: @records}
     end
 
   end
