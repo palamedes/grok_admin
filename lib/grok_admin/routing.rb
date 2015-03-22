@@ -6,7 +6,7 @@ module ActionDispatch
       # Allow a user to set the route path to anything
       def grokadmin_to route_name
         # todo Make sure the route name is a legal one?
-        mount GrokAdmin::Engine => route_name, as: "GrokAdmin"
+        mount GrokAdmin::Engine => route_name, as: "grok_admin"
       end
 
     end
