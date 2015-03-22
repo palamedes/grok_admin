@@ -36,8 +36,7 @@ $(document).on('ready page:load', function () {
         // Now make the page we clicked active
         $dis.siblings().removeClass('active');
         // Find the page we are on, and set it as active
-        console.log('[data-page=' + resp.page + ']');
-        $dis.siblings('[data-page=' + resp.page + ']').not('.icon').addClass('active');
+        $dis.parent().children('a.item[data-page=' + resp.page + ']').not('.icon').addClass('active');
       },
       error: function() {
         console.error(arguments);
