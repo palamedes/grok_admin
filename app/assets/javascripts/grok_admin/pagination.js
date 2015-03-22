@@ -24,7 +24,6 @@ $(document).on('ready page:load', function () {
         $table = $dis.parents('table');
         // Clone the clone, iterate through the results and inject!
         for (i=0;i<resp.records.length;i++) {
-console.log(resp.records[i]);
           // Copy our clone
           var $copy = $clone.clone().removeClass('clone');
           // Iterate through each key in the resp.record and dump it in the correct column
@@ -34,7 +33,9 @@ console.log(resp.records[i]);
           // Prepend to the table
           $copy.prependTo($table);
         }
-
+        // Now make the page we clicked active
+        $dis.siblings().removeClass('active');
+        $dis.addClass('active');
       },
       error: function() {
         console.error(arguments);
