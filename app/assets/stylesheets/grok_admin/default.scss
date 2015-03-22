@@ -46,20 +46,25 @@ body {
 
   table.ui.table {
     background: inherit;
-    td {
-      word-break: break-word;
-    }
-    td, th {
-      &.id {
-        min-width: 60px;
+    tr {
+      &.clone {
+        display: none;
       }
-      &.created_at,
-      &.updated_at {
-        width: 200px;
+      td {
+        word-break: break-word;
       }
-      &.actions {
-        width: 200px;
-        text-align:center;
+      td, th {
+        &.id {
+          min-width: 60px;
+        }
+        &.created_at,
+        &.updated_at {
+          width: 200px;
+        }
+        &.actions {
+          width: 200px;
+          text-align:center;
+        }
       }
     }
 
