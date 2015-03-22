@@ -54,17 +54,17 @@
                 <td colspan="<%= model.column_names.count + 1 %>">
 
                   <div class="ui pagination menu">
-                    <a class="icon item" data-model="<%= model.name %>" data-page="1" data-route="<%= resource_path %>">
+                    <a class="icon item" data-model="<%= model.name %>" data-page="1" data-route="<%= grok_admin.resource_path %>">
                       <i class="left arrow icon"></i>
                     </a>
 
                     <% ((model.all.count / GrokAdmin::PAGINATION_SIZE) + 1).times do |time| %>
-                      <a class="<%= "active " if time == 0 %>item" data-model="<%= model.name %>" data-page="<%= time %>" data-route="<%= resource_path %>">
+                      <a class="<%= "active " if time == 0 %>item" data-model="<%= model.name %>" data-page="<%= time %>" data-route="<%= grok_admin.resource_path %>">
                         <%= time + 1 %>
                       </a>
                     <% end %>
 
-                    <a class="icon item" data-model="<%= model.name %>" data-page="<%= model.all.count / GrokAdmin::PAGINATION_SIZE %>" data-route="<%= resource_path %>">
+                    <a class="icon item" data-model="<%= model.name %>" data-page="<%= model.all.count / GrokAdmin::PAGINATION_SIZE %>" data-route="<%= grok_admin.resource_path %>">
                       <i class="right arrow icon"></i>
                     </a>
                   </div>
