@@ -66,10 +66,26 @@ $(document).on('ready page:load', function () {
 
   // When a user clicks the save icon, save!
   $(document).on('click', 'i.save.icon', function(e) {
+    // Get our route
+    var route = $(this).parents('table').data('route');
+    // Get our model
+    var model = $(this).parents('table').data('model');
     // Get our serialized data for this object
-    var data = $(this).parents('tr').find('input').serialize();
+    var data = 'resource=' + model + '&$(this).parents('tr').find('input').serialize();
+    // Fire off a patch to update the data
+    $.ajax({
+      type: "PATCH",
+      dataType: "JSON",
+      url: route,
+      data: data,
+      success: function(resp) {
+        console.log(arguments);
+      },
+      error: function() {
+        console.error(arguments);
+      }
+    });
 
-    console.log(data);
   });
 
 });
