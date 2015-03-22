@@ -33,7 +33,8 @@ $(document).on('ready page:load', function () {
       }
       // Build our input
       // todo build it based on the type of input in data-type
-      var html = "<input class='editor' type='" + type + "' value='" + value + "' />";
+      var column = $(td).data('column');
+      var html = "<input class='editor' type='" + type + "' name='resource[' + column + ']' value='" + value + "' />";
       // Inject the input and focus it.
       $(td).html(html);
       $(td).find('input').css('width', colSize - 20);
