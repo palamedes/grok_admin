@@ -61,17 +61,17 @@
                     <a class="active item">
                       1
                     </a>
+                    <a class="active item" data-model="<%= model.name %>" data-page="2">
+                      2
+                    </a>
+                    <a class="active item">
+                      3
+                    </a>
                     <div class="disabled item">
                       ...
                     </div>
                     <a class="item">
                       10
-                    </a>
-                    <a class="item">
-                      11
-                    </a>
-                    <a class="item">
-                      12
                     </a>
 
                     <a class="icon item">
@@ -80,7 +80,7 @@
                   </div>
                   <div class="ui pagination menu">
                     <div class="disabled item">
-                      Showing 1 - 5 of ##`
+                      Showing 1 - 5 of <%= model.all.count %>
                     </div>
                   </div>
 
