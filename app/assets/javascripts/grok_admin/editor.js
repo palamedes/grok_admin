@@ -67,7 +67,7 @@ $(document).on('ready page:load', function () {
   // When a user clicks the save icon, save!
   $(document).on('click', 'i.save.icon', function(e) {
     // Get our serialized data for this object
-    var data = $(this).parents('tr').children('input').serialize();
+    var data = $(this).parents('tr').find('input').serialize();
 
     console.log(data);
   });
