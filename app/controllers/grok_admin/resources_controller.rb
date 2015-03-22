@@ -21,7 +21,7 @@ module GrokAdmin
           page: page,
           offset: offset,
           model: resource,
-          showing: "Showing #{offset} - #{offset + @records.count} of #{@model.all.count}"
+          showing: "Showing #{offset + 1} - #{offset + @records.count} of #{@model.all.count}"
       }
     end
 
