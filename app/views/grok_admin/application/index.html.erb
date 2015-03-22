@@ -33,7 +33,7 @@
               </tr>
               </thead>
               <tbody>
-              <% model.all.each do |obj| %>
+              <% model.limit(5).each do |obj| %>
               <tr>
                 <td>
                   <% if model.any_grok_admin_editable_columns? %>
