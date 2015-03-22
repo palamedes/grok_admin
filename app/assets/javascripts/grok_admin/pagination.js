@@ -19,6 +19,20 @@ $(document).on('ready page:load', function () {
       success: function(resp) {
         // Clear the way for the new information
         $dis.parent().parent().parent().siblings().not('.clone').remove();
+        // Get our clone and parent table
+        $clone = $dis.parent().parent().parent().siblings('.clone').first();
+        $table = $dis.parents('table');
+        // Clone the clone, iterate through the results and inject!
+        for (i=0;i<resp.records.length;i++) {
+          // Copy our clone
+          var $copy = $clone.removeClass('clone');
+          // Iterate through each key in the resp.record and dump it in the correct column
+          for (column in resp.records[i]) {
+            $copy.children('.' + column).html(resp.records[i][column]);
+          }
+          // Prepend to the table
+          $copy.prependTo($table);
+        }
 
       },
       error: function() {
