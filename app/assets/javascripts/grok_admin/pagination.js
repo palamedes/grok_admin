@@ -26,7 +26,7 @@ $(document).on('ready page:load', function () {
         for (i=0;i<resp.records.length;i++) {
 console.log(resp.records[i]);
           // Copy our clone
-          var $copy = $clone.removeClass('clone');
+          var $copy = $clone.clone().removeClass('clone');
           // Iterate through each key in the resp.record and dump it in the correct column
           for (column in resp.records[i]) {
             $copy.children('.' + column).html(resp.records[i][column]);
