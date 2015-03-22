@@ -58,7 +58,7 @@
                       <i class="left arrow icon"></i>
                     </a>
 
-                    <% (model.all.count / GrokAdmin::PAGINATION_SIZE).times do |time| %>
+                    <% ((model.all.count / GrokAdmin::PAGINATION_SIZE) + 1).times do |time| %>
                       <a class="<% "active " if time == 1%>item" data-model="<%= model.name %>" data-page="<%= time %>">
                         <%= time %>
                       </a>
