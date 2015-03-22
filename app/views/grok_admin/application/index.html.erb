@@ -33,7 +33,7 @@
               </tr>
               </thead>
               <tbody>
-              <% model.limit(5).each do |obj| %>
+              <% model.limit(GrokAdmin::PAGINATION_SIZE).each do |obj| %>
               <tr>
                 <td>
                   <% if model.any_grok_admin_editable_columns? %>
@@ -54,27 +54,17 @@
                 <td colspan="<%= model.column_names.count + 1 %>">
 
                   <div class="ui pagination menu">
-                    <a class="icon item">
+                    <a class="icon item" data-model="<%= model.name %>" data-page="1">
                       <i class="left arrow icon"></i>
                     </a>
 
-                    <a class="active item">
-                      1
-                    </a>
-                    <a class="active item" data-model="<%= model.name %>" data-page="2">
-                      2
-                    </a>
-                    <a class="active item">
-                      3
-                    </a>
-                    <div class="disabled item">
-                      ...
-                    </div>
-                    <a class="item">
-                      10
-                    </a>
+                    <% (model.all.count / GrokAdmin::PAGINATION_SIZE).times do |time| %>
+                      <a class="<% "active " if time == 1%>item" data-model="<%= model.name %>" data-page="<%= time %>">
+                        <%= time %>
+                      </a>
+                    <% end %>
 
-                    <a class="icon item">
+                    <a class="icon item" data-model="<%= model.name %>" data-page="<%= model.all.count / GrokAdmin::PAGINATION_SIZE %>">
                       <i class="right arrow icon"></i>
                     </a>
                   </div>

@@ -5,25 +5,27 @@ require "grok_admin/grok_admin_editable"
 
 module GrokAdmin
 
-  class << self
+  PAGINATION_SIZE = 5
 
-    attr_accessor :core
-
-    def initialize
-      @core ||= ::GrokAdmin::Core.new
-    end
-
-  end
-
-
-  # Core to the application
-  class Core
-
-    def test
-      "Core Success"
-    end
-
-  end
+  # class << self
+  #
+  #   attr_accessor :core
+  #
+  #   def initialize
+  #     @core ||= ::GrokAdmin::Core.new
+  #   end
+  #
+  # end
+  #
+  #
+  # # Core to the application
+  # class Core
+  #
+  #   def test
+  #     "Core Success"
+  #   end
+  #
+  # end
 
 
 end
