@@ -37,6 +37,8 @@ $(document).on('ready page:load', function () {
         $dis.siblings().removeClass('active');
         // Find the page we are on, and set it as active
         $dis.parent().children('a.item[data-page=' + resp.page + ']').not('.icon').addClass('active');
+        // Set the showing test
+        $dis.parents('td').find('.showing').html(resp.showing);
       },
       error: function() {
         console.error(arguments);
