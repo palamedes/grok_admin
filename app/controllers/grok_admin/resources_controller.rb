@@ -50,7 +50,7 @@ module GrokAdmin
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      # todo dynamically set the allowed params based on what we are allowed to set
+      params.require(:resource).permit(@model.get_grok_admin_fields_allowed)
     end
 
   end
