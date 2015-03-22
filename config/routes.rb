@@ -1,6 +1,6 @@
 GrokAdmin::Engine.routes.draw do
 
-  get "/resources", to: "resources#index"
+  resources :resources, only: [:index, :update]
 
   root to: 'application#index'
 
