@@ -59,7 +59,7 @@
                     </a>
 
                     <% ((model.all.count / GrokAdmin::PAGINATION_SIZE) + 1).times do |time| %>
-                      <a class="<% "active " if time == 0 %>item" data-model="<%= model.name %>" data-page="<%= time %>">
+                      <a class="<%= "active " if time == 0 %>item" data-model="<%= model.name %>" data-page="<%= time %>">
                         <%= time + 1 %>
                       </a>
                     <% end %>
