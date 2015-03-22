@@ -109,6 +109,12 @@ body {
   input.editor ::-webkit-datetime-edit {
     color: rgba(140,140,140,0.6) !important;
   }
+
+  .ui.pagination {
+    .item {
+      display: inline-block !important;
+    }
+  }
 }
 
 footer {
