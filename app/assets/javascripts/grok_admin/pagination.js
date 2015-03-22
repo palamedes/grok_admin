@@ -8,6 +8,7 @@ $(document).on('ready page:load', function () {
     var model = $(this).data('model');
     var page = $(this).data('page');
     var data = "model=" + model + "&page=" + page;
+    var $dis = $(this);
 
     // Create an ajax put to the route to get the next batch of records for our paginator
     $.ajax({
@@ -16,7 +17,9 @@ $(document).on('ready page:load', function () {
       url: route,
       data: data,
       success: function(resp) {
-        console.log(arguments);
+        // Clear the way for the new information
+        $dis.parent().parent().parent().siblings().not('.clone').remove();
+
       },
       error: function() {
         console.error(arguments);
