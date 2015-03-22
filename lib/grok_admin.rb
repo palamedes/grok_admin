@@ -7,6 +7,9 @@ module GrokAdmin
 
   PAGINATION_SIZE = 5
 
+  # TODO For now pagination size is a constant but I shoudl change it to a config somewhere and add a method
+  # here to get those config settings.
+  #
   # class << self
   #
   #   attr_accessor :core
