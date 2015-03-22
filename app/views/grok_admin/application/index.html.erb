@@ -51,7 +51,7 @@
                   <% end %>
                 </tr>
               <% end %>
-              <tr data-key="<%= model.primary_key %>" data-id="<%= obj[model.primary_key] %>" data-route="<%= grok_admin.resource_path %>">
+              <tr data-route="<%= grok_admin.resource_path(obj[model.primary_key]) %>">
                 <td>
                   <% if model.any_grok_admin_editable_columns? %>
                     <i class="black edit icon"></i>
