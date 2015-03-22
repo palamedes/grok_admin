@@ -67,7 +67,7 @@ $(document).on('ready page:load', function () {
   // When a user clicks the save icon, save!
   $(document).on('click', 'i.save.icon', function(e) {
     // Get our route
-    var route = $(this).parents('table').data('route');
+    var route = $(this).parents('tr').data('route');
     // Get our model
     var model = $(this).parents('table').data('model');
     // Get our ID & primary key
