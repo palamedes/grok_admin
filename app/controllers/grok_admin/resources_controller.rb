@@ -12,7 +12,7 @@ module GrokAdmin
 
       # Get the "page" from the params too, if there is no page give them page zero
       page = params['page'] || 0
-      offset = page * GrokAdmin::PAGINATION_SIZE
+      offset = page.to_i * GrokAdmin::PAGINATION_SIZE
       # Get our records
       @records = @model.limit(GrokAdmin::PAGINATION_SIZE).offset(offset)
       # Return as a json response
