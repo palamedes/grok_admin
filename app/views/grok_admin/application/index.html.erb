@@ -33,7 +33,24 @@
               </tr>
               </thead>
               <tbody>
-              <% model.limit(GrokAdmin::PAGINATION_SIZE).each do |obj| %>
+              <% model.limit(GrokAdmin::PAGINATION_SIZE).each_with_index do |obj, index| %>
+              <% if index == 0 %>
+                <tr class="clone">
+                  <td>
+                    <% if model.any_grok_admin_editable_columns? %>
+                      <i class="black edit icon"></i>
+                      <i class="green save icon"></i>
+                      <i class="red undo icon"></i>
+                    <% end %>
+                    <i class="red delete icon"></i>
+                  </td>
+                  <% #model.column_names.each do |column| %>
+                  <% get_columns(model).each do |column| %>
+                    <%# NO SPACES between the td and the column data or it causes issues %>
+                    <td class="<%= column %> <%= "editable" if is_editable? model, column %>" data-type="<%= get_column_type model, column %>"></td>
+                  <% end %>
+                </tr>
+              <% end %>
               <tr>
                 <td>
                   <% if model.any_grok_admin_editable_columns? %>
