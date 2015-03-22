@@ -24,6 +24,7 @@ $(document).on('ready page:load', function () {
         $table = $dis.parents('table');
         // Clone the clone, iterate through the results and inject!
         for (i=0;i<resp.records.length;i++) {
+console.log(resp.records[i]);
           // Copy our clone
           var $copy = $clone.removeClass('clone');
           // Iterate through each key in the resp.record and dump it in the correct column
