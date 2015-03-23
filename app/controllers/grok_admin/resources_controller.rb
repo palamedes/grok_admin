@@ -45,7 +45,7 @@ module GrokAdmin
 
     # Load the resource we are talking about here
     def set_resource
-      @resource = @model.find by: params[:id]
+      @resource = @model.find id: params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
