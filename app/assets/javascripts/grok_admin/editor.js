@@ -71,7 +71,7 @@ $(document).on('ready page:load', function () {
     // Get our model
     var model = $(this).parents('table').data('model');
     // Get our serialized data for this object
-    var data = 'resource=' + model + '&' + $(this).parents('tr').find('input').serialize();
+    var data = 'model=' + model + '&' + $(this).parents('tr').find('input').serialize();
     // Fire off a patch to update the data
     $.ajax({
       type: "PATCH",
