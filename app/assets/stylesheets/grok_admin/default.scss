@@ -81,6 +81,8 @@ body {
   ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;
+    height: 8px;
+    opacity: 0.8;
   }
   ::-webkit-scrollbar-thumb {
     border-radius: 4px;
