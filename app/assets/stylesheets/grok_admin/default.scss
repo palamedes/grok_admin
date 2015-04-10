@@ -75,7 +75,8 @@ body {
   }
 
   .accordion .item .content {
-    overflow: scroll;
+    background-color: red !important;
+    overflow: scroll !important;
     ::-webkit-scrollbar {
       -webkit-appearance: none;
       width: 7px;
