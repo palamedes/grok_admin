@@ -45,6 +45,7 @@ body {
   }
 
   table.ui.table {
+    box-sizing: content-box;
     background: inherit;
     tr {
       &.clone {
